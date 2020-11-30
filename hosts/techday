@@ -1,0 +1,6 @@
+[master_hosts]
+master  ansible_host=13.92.182.78   ansible_user=andrewsarver
+
+[node_hosts]
+node1   ansible_host=172.16.8.4     ansible_user=andrewsarver
+node2   ansible_host=172.16.8.5     ansible_user=andrewsarver

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Commands should be run in the ansible folder
+
+# Install common utilities
+ansible-playbook -i hosts/techday playbooks/ensure-utils-installed.yml
+
+# Install prometheus node_exporter on nodes
+ansible-playbook -i hosts/techday playbooks/ensure-prometheus-node-exporter-installed.yml --limit node_hosts
+
+# Install prometheus on master
+ansible-playbook -i hosts/techday playbooks/ensure-prometheus-monitor-installed.yml --limit master_hosts
+
+# Install grafana on master
+ansible-playbook -i hosts/techday playbooks/ensure-grafana-installed.yml --limit=master_hosts

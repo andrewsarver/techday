@@ -1,0 +1,4 @@
+- name: ensure-utils-installed
+  hosts: all
+  roles:
+    - { role: utils, tags: ["utils"] }
