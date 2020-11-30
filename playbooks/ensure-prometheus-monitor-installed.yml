@@ -10,7 +10,7 @@
         labels:
           env: techday
     prometheus_scrape_configs:
-    - job_name: "prometheus"    # Custom scrape job, here using `static_config`
+    - job_name: "prometheus"
       metrics_path: "/metrics"
       static_configs:
         - targets:
@@ -18,4 +18,4 @@
     - job_name: "node"
       file_sd_configs:
         - files:
-            - "{{ prometheus_config_dir }}/file_sd/node.yml" # This line loads file created from `prometheus_targets`
+            - "{{ prometheus_config_dir }}/file_sd/node.yml"

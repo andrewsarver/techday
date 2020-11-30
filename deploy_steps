@@ -5,11 +5,14 @@
 # Install common utilities
 ansible-playbook -i hosts/techday playbooks/ensure-utils-installed.yml
 
-# Install prometheus node_exporter on nodes
+# Install and configure prometheus node_exporter on nodes
 ansible-playbook -i hosts/techday playbooks/ensure-prometheus-node-exporter-installed.yml --limit node_hosts
 
-# Install prometheus on master
+# Install and configure prometheus on master
 ansible-playbook -i hosts/techday playbooks/ensure-prometheus-monitor-installed.yml --limit master_hosts
 
-# Install grafana on master
-ansible-playbook -i hosts/techday playbooks/ensure-grafana-installed.yml --limit=master_hosts
+# Install and configure grafana on master
+ansible-playbook -i hosts/techday playbooks/ensure-grafana-installed.yml --limit master_hosts
+
+# Install and configure ntp on all hosts
+ansible-playbook -i hosts/techday playbooks/ensure-utils-installed.yml
